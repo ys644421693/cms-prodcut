@@ -14,7 +14,7 @@ public class PageOrm {
     private Set<CssGroupOrm> cssGroupOrmSet;
     private Set<JsGroupOrm> jsGroupOrmSet;
     private PageFrameworkOrm pageFrameworkOrm;
-    private String productpath;
+    private String productPath;
     private String sourcePath;//
     private Date createTime;
     private Date updateTime;
@@ -85,12 +85,12 @@ public class PageOrm {
         this.pageFrameworkOrm = pageFrameworkOrm;
     }
 
-    public String getProductpath() {
-        return productpath;
+    public String getProductPath() {
+        return productPath;
     }
 
-    public void setProductpath(String productpath) {
-        this.productpath = productpath;
+    public void setProductPath(String productPath) {
+        this.productPath = productPath;
     }
 
     public String getSourcePath() {

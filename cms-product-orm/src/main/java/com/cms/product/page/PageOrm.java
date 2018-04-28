@@ -1,5 +1,7 @@
 package com.cms.product.page;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -45,6 +47,9 @@ public class PageOrm {
         this.name = name;
     }
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @Cascade(value= {org.hibernate.annotations.CascadeType.SAVE_UPDATE})
+    @JoinTable(name = "t_cms_page_css_m",joinColumns={@JoinColumn(name="pageId")},inverseJoinColumns = {@JoinColumn(name = "cssId")})
     public Set<CssGroupOrm> getCssGroupOrmSet() {
         return cssGroupOrmSet;
     }
@@ -53,6 +58,9 @@ public class PageOrm {
         this.cssGroupOrmSet = cssGroupOrmSet;
     }
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @Cascade(value= {org.hibernate.annotations.CascadeType.SAVE_UPDATE})
+    @JoinTable(name = "t_cms_page_js_m",joinColumns={@JoinColumn(name="pageId")},inverseJoinColumns = {@JoinColumn(name = "jsId")})
     public Set<JsGroupOrm> getJsGroupOrmSet() {
         return jsGroupOrmSet;
     }
@@ -77,6 +85,7 @@ public class PageOrm {
         this.updateTime = updateTime;
     }
 
+    @ManyToOne(fetch = FetchType.EAGER)
     public PageFrameworkOrm getPageFrameworkOrm() {
         return pageFrameworkOrm;
     }

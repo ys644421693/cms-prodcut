@@ -1,5 +1,7 @@
 package com.cms.product.page;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -51,6 +53,9 @@ public class JsGroupOrm {
         this.jsCode = jsCode;
     }
 
+    @ManyToMany
+    @Cascade(value= {org.hibernate.annotations.CascadeType.SAVE_UPDATE})
+    @JoinTable(name = "t_cms_page_js_m",joinColumns={@JoinColumn(name="jsId")},inverseJoinColumns = {@JoinColumn(name = "pageId")})
     public Set<PageOrm> getPageOrmSet() {
         return pageOrmSet;
     }

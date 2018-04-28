@@ -1,5 +1,7 @@
 package com.cms.product.page;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -16,6 +18,7 @@ public class PageFrameworkOrm implements Serializable {
     private String cell;
     private PageFrameworkOrm parentId;
     private Set<PageFrameworkOrm> children = new HashSet<PageFrameworkOrm>();
+    private Set<PageOrm> pageOrms;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -81,5 +84,12 @@ public class PageFrameworkOrm implements Serializable {
         this.children = children;
     }
 
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "pageFrameworkOrm")
+    public Set<PageOrm> getPageOrms() {
+        return pageOrms;
+    }
 
+    public void setPageOrms(Set<PageOrm> pageOrms) {
+        this.pageOrms = pageOrms;
+    }
 }

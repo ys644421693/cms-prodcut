@@ -21,5 +21,10 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.cms.product</groupId>
+      <artifactId>cms-product-orm</artifactId>
+      <version>${parent.version}</version>
+    </dependency>
   </dependencies>
 </project>

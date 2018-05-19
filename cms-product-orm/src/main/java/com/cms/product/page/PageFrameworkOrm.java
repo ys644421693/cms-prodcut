@@ -14,7 +14,7 @@ public class PageFrameworkOrm implements Serializable {
     private long id;
     private String name;
     private int col;
-    private int index;
+    private int sortNum;
     private String cell;
     private PageFrameworkOrm parentId;
     private Set<PageFrameworkOrm> children = new HashSet<PageFrameworkOrm>();
@@ -46,12 +46,12 @@ public class PageFrameworkOrm implements Serializable {
         this.col = col;
     }
 
-    public int getIndex() {
-        return index;
+    public int getSortNum() {
+        return sortNum;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    public void setSortNum(int sortNum) {
+        this.sortNum = sortNum;
     }
 
     public String getCell() {

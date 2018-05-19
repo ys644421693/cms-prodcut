@@ -2,6 +2,7 @@ package com.cms.product;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
@@ -9,6 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @SpringBootApplication
 @EnableTransactionManagement
+@ComponentScan(basePackages={"com.management.app.**","com.cms.product.**"})
 public class ApplicationStart {
 
     public static void main(String[] args) {

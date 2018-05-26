@@ -39,7 +39,7 @@ var LoginForm = React.createClass({
         var remember = this.state.remember;
         return <div className="login-box">
             <div className="header">
-                Login to Proton
+                Login to TTM-CMS
             </div>
             <form className="form-horizontal login">
                 <fieldset className="col-sm-12">

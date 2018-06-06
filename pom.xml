@@ -8,6 +8,10 @@
   <name>cms-product</name>
   <url>http://maven.apache.org</url>
   <properties>
+    <java.encoding>UTF-8</java.encoding>
+    <java.version>1.8</java.version>
+    <maven-compiler-plugin>3.1</maven-compiler-plugin>
+
     <spring-boot-version>2.0.1.RELEASE</spring-boot-version>
     <msyql-version>6.0.6</msyql-version>
     <hsqldb-version>2.4.0</hsqldb-version>
@@ -96,6 +100,15 @@
   <!--跳过测试-->
   <build>
     <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin}</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+          <encoding>${java.encoding}</encoding>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>

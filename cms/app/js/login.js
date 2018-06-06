@@ -19,7 +19,7 @@ var LoginForm = React.createClass({
         $.post(config.service + "/sys/login", this.state, function (data) {
             console.log(data);
             if (data.result == "SUCCESS") {
-                window.location.href = 'index.html';
+                window.location.href = 'app/index.html';
             } else {
                 $("#tip").html(data.errorMsg);
             }

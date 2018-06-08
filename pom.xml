@@ -17,7 +17,7 @@
     <hsqldb-version>2.4.0</hsqldb-version>
     <thymeleaf-version>3.0.2.RELEASE</thymeleaf-version>
     <nekothml-version>1.9.22</nekothml-version>
-    <apollo-client-version>0.10.2</apollo-client-version>
+    <apollo-client-version>0.7.2</apollo-client-version>
     <druid-version>1.1.9</druid-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.10</maven.compiler.source>
